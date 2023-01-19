@@ -356,30 +356,5 @@ function deleteEmployee() {
 });
 };
 
-// // View employee by manager
-// function viewAllEmpByManager() {
-//     const sql = `  SELECT 
-//             CONCAT(manager.first_name, ' ' ,manager.last_name) AS manager,
-//             employee.id, 
-//             employee.first_name, 
-//             employee.last_name,  
-//             roles.title AS Title,
-//             department.department_name, 
-//             roles.salary
-//             FROM employee 
-//             JOIN roles ON employee.role_id = roles.id
-//             JOIN department ON roles.department_id = department.id
-//             LEFT JOIN  employee AS manager ON employee.manager_id = manager.id
-//             ORDER BY manager`;
-//       db.query(sql, (err, result) => {
-//           if(err) {
-//               res.status(400).json({ error: err.message });
-//               return;
-//           }
-//           console.table(result);
-//           startPrompt();
-//       });
-// }
-
 // Call to start app
 startPrompt();
